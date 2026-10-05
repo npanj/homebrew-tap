@@ -1,17 +1,24 @@
 cask "slipstream" do
-  version "26.10.6"
-  sha256 "0edc03cbd9b32d9687488fb2591c39d9b13c13d9a487d790c9e3346c7c2cb9e3"
+  version "26.10.7"
+  sha256 "7ebfa02f5000f1995293dc00ca54ac3f5181b20ce334236b0396854c147281cd"
 
-  url "https://github.com/npanj/slipstream-menubar/releases/download/v#{version}/Slipstream-Menubar.#{version}.dmg"
+  url "https://github.com/npanj/slipstream-menubar/releases/download/v#{version}/Slipstream.#{version}.dmg"
   name "Slipstream"
-  desc "Slipstream Menubar app and local inference engine"
+  desc "Slipstream macOS app and local inference engine"
   homepage "https://github.com/npanj/slipstream"
 
   depends_on arch: :arm64
   depends_on macos: :sequoia
   depends_on formula: "npanj/tap/slipstream"
 
-  app "Slipstream Menubar.app"
+  app "Slipstream.app"
+
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args:         ["-dr", "com.apple.quarantine", "Slipstream.app"],
+        base:         :appdir,
+        must_succeed: false
+  end
 
   zap trash: [
     "~/Library/Application Support/Slipstream",
