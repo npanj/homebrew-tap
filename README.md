@@ -4,20 +4,28 @@ Official Homebrew tap for [Slipstream](https://github.com/npanj/slipstream) and 
 
 ## Installation
 
-### 1. Slipstream Menubar (macOS GUI App)
-
-Install the native menu bar application to start, stop, configure, and monitor models:
+### Install Both (Menu Bar App + CLI Engine in One Command)
 
 ```zsh
-brew install --cask npanj/tap/slipstream-menubar
+brew install --cask npanj/tap/slipstream
 ```
 
-### 2. Slipstream CLI (Inference Engine)
+*This installs both the **Slipstream Menubar app** into `/Applications` and the **Slipstream CLI inference engine** (`slipstream`) onto your `PATH`.*
 
-Install the command-line inference engine:
+---
+
+### Install CLI Engine Only (Headless / Terminal)
 
 ```zsh
 brew install npanj/tap/slipstream
+```
+
+---
+
+### Install Menu Bar App
+
+```zsh
+brew install --cask npanj/tap/slipstream-menubar
 ```
 
 ---
@@ -26,8 +34,7 @@ brew install npanj/tap/slipstream
 
 ```zsh
 brew tap npanj/tap
-brew install --cask slipstream-menubar
-brew install slipstream
+brew install --cask slipstream
 ```
 
 ## Requirements

@@ -1,11 +1,11 @@
-cask "slipstream-menubar" do
+cask "slipstream" do
   version "26.10.6"
   sha256 "0edc03cbd9b32d9687488fb2591c39d9b13c13d9a487d790c9e3346c7c2cb9e3"
 
   url "https://github.com/npanj/slipstream-menubar/releases/download/v#{version}/Slipstream-Menubar.#{version}.dmg"
-  name "Slipstream Menubar"
-  desc "macOS menu bar item to start, stop, configure and monitor a local Slipstream server"
-  homepage "https://github.com/npanj/slipstream-menubar"
+  name "Slipstream"
+  desc "Slipstream Menubar app and local inference engine"
+  homepage "https://github.com/npanj/slipstream"
 
   depends_on arch: :arm64
   depends_on macos: :sequoia
