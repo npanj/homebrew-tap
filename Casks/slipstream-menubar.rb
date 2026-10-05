@@ -8,14 +8,9 @@ cask "slipstream-menubar" do
   homepage "https://github.com/npanj/slipstream-menubar"
 
   depends_on arch: :arm64
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   app "Slipstream Menubar.app"
-
-  postflight do
-    system_command "xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Slipstream Menubar.app"]
-  end
 
   zap trash: [
     "~/Library/Application Support/Slipstream",

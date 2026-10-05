@@ -7,7 +7,7 @@ class Slipstream < Formula
   license "Apache-2.0"
 
   depends_on arch: :arm64
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   def install
     # The release archive extracts a root directory slipstream-<version>-macos26-arm-64bit/
